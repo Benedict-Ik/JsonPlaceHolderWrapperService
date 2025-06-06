@@ -11,7 +11,7 @@ For this project, we made use of Json Placeholder which allows developers to sim
 ## Key Endpoints for Our Wrapper API
 |    Endpoint         |    Action    |
 |---------------------|--------------|
-| GET/api/posts  | Retrieve all posts|
+| GET/api/posts  | Retrieves all posts|
 | GET/api/posts/\{id}| Fetches a single post by ID
 | GET/api/posts/\{id}/comments| Get comments for a specific post
 | GET/api/users/\{id} | Retrieves details for a specific user
