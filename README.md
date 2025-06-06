@@ -100,5 +100,5 @@ For this project, we made use of Json Placeholder which allows developers to sim
 ```
 
 ## Authentication/Authorization
-Since the `JSONPlaceholder API` is a public API used to testing purposes, it doesn't require authentication to use its endpoints.  
-We secured the wrapper API with basic authentication (username/password).
+- Since the `JSONPlaceholder API` is a public API used for testing purposes, it doesn't require authentication to use its endpoints.  
+- We secured the wrapper API with basic authentication (username/password).
