@@ -1,7 +1,7 @@
 # Json Placeholder Wrapper Service 
 In this branch, we added the Basic Authentication middleware, `.AddAuthentication`, created a custom `BasicAuthenticationHelper` class, added the auth credentials in our appsettings file using `Secret Manager` , and enable Authentication/Authorization in the app.
 
-## Configuring Authentication using Basic Authentication
+## Configured Authentication using Basic Authentication
 Added the below line in Program.cs
 ```C#
 builder.Services.AddAuthentication("BasicAuthentication")
@@ -12,10 +12,10 @@ The above code configures authentication in an ASP.NET Core application using Ba
 inherits from `AuthenticationHandler<AuthenticationSchemeOptions>` and manages user authentication. The helper class is responsible for processing authentication requests, such as validating credentials from an HTTP request header. This setup enables secure access control by requiring clients to provide a username and password when 
 interacting with protected endpoints.
 
-## Creating `BasicAuthenticationHelper` class
+## Created `BasicAuthenticationHelper` class
 We created a `Helpers` folder that housed our BasicAuthenticationHandler class.
 
-## Creating `BasicAuth` object in app.settings
+## Created `BasicAuth` object in app.settings
 Added the below line in appsettings:
 ```JSON
 "BasicAuth": {
@@ -52,7 +52,7 @@ In your **Program.cs** file, add the below line to load secrets into configurati
 builder.Configuration.AddUserSecrets<Program>();
 ```
 
-## Enabling Authentication and Authorization Middleware
+## Enabled Authentication and Authorization Middleware
 We added the below lines of code in Program.cs:
 ```C#
 app.UseAuthentication();
