@@ -1,29 +1,63 @@
 # Json Placeholder Wrapper Service 
-In this branch, we configured a typed HTTP Client in Program.cs, created and implemented a JsonPlaceholderService 
+In this branch, we added the Basic Authentication middleware, `.AddAuthentication`, created a custom `BasicAuthenticationHelper` class, added the auth credentials in our appsettings file using `Secret Manager` , and enable Authentication/Authorization in the app.
 
-## Configuring Typed HTTP Client
-In Program.cs, we added the below line:
+## Configuring Authentication using Basic Authentication
+Added the below line in Program.cs
 ```C#
-builder.Services.AddHttpClient("JsonPlaceholder", client =>
-{
-    client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
-    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-});
+builder.Services.AddAuthentication("BasicAuthentication")
+    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHelper>("BasicAuthentication", null);
 ```
 
-The above code registers an HTTP client named `"JsonPlaceholder"` in the application's dependency injection container using 
-`AddHttpClient`. It configures the client by setting its base address to https://jsonplaceholder.typicode.com/, meaning all 
-requests using this client will be relative to this URL. Additionally, it adds a default request header to specify that the 
-client expects responses in JSON format. This setup allows the application to efficiently manage HTTP requests while keeping 
-the configuration centralized and reusable.
+The above code configures authentication in an ASP.NET Core application using Basic Authentication. It first registers the authentication service with the scheme name `"BasicAuthentication"`, then adds a custom authentication handler (BasicAuthenticationHandler) that 
+inherits from `AuthenticationHandler<AuthenticationSchemeOptions>` and manages user authentication. The helper class is responsible for processing authentication requests, such as validating credentials from an HTTP request header. This setup enables secure access control by requiring clients to provide a username and password when 
+interacting with protected endpoints.
 
-## Creating and implementing an interface
-- Created an Interfaces and Services folders that houses the `IJsonPlaceholderService` and `JsonPlaceholderService` respectively.  
-- This interface class defines a contract for a service that interacts with the JSONPlaceholder API.  
-- The `JsonPlaceholderService` class is the concrete definition of definitions defined in the interface class.
+## Creating `BasicAuthenticationHelper` class
+We created a `Helpers` folder that housed our BasicAuthenticationHandler class.
 
-## Registering the newly created service in the DI Container
-In Program.cs we inserted the below code to register the service:
-```C#
-builder.Services.AddScoped<IJsonPlaceholderService, JsonPlaceholderService>();
+## Creating `BasicAuth` object in app.settings
+Added the below line in appsettings:
+```JSON
+"BasicAuth": {
+    "Username": "Username",
+    "Password":  "Password"
+}
 ```
+
+>The above values are placeholders. We will be using the secret manager package to store the real values.
+
+## Using Secret Manager to store Secrets
+For privacy and security, we installed and employed the use of the Secret Manager package, which helps us 
+store secrets (sensitive piece of information) securely and only reference them when we need to.
+
+### Important Commands to Note
+1. **Initialize Secret Manager**
+```Sh
+dotnet user-secrets init
+```
+
+1. **Storing Secrets**
+```Sh
+dotnet user-secrets set "BasicAuth:Username" "Username"
+dotnet user-secrets set "BasicAuth:Password" "Password"
+```
+
+1. **Retrieve all secrets**
+```Sh
+dotnet user-secrets list
+```
+
+In your **Program.cs** file, add the below line to load secrets into configuration:
+```C#
+builder.Configuration.AddUserSecrets<Program>();
+```
+
+## Enabling Authentication and Authorization Middleware
+We added the below lines of code in Program.cs:
+```C#
+app.UseAuthentication();
+app.UseAuthorization();
+```
+
+The above enables authentication and authorization middleware in the application. `app.UseAuthentication()` ensures that incoming requests are checked for authentication credentials, like tokens or login details. `app.UseAuthorization()` then verifies whether the 
+authenticated user has the necessary permissions to access specific resources. Together, they help enforce security by ensuring only authorized users can interact with protected endpoints.

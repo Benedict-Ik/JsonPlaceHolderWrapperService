@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("abe401c5-63c5-48b9-8e76-1afeede61b90")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("JsonPlaceHolderWrapperService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+269de773623b2a38dd6c11d873fbb2d52b94f32d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8511f44ddc98e082e6740830fcf4a07f6a9e94b")]
 [assembly: System.Reflection.AssemblyProductAttribute("JsonPlaceHolderWrapperService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JsonPlaceHolderWrapperService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
