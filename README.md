@@ -36,13 +36,13 @@ store secrets (sensitive piece of information) securely and only reference them 
 dotnet user-secrets init
 ```
 
-1. **Storing Secrets**
+2. **Storing Secrets**
 ```Sh
 dotnet user-secrets set "BasicAuth:Username" "Username"
 dotnet user-secrets set "BasicAuth:Password" "Password"
 ```
 
-1. **Retrieve all secrets**
+3. **Retrieve all secrets**
 ```Sh
 dotnet user-secrets list
 ```
