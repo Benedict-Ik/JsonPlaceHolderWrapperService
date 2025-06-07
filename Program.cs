@@ -10,6 +10,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var configuration = builder.Configuration;
+
+//builder.Services.AddHttpClient("JsonPlaceholder", client =>
+//{
+//    client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+//    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+//});
+
+var baseUrl = configuration["ApiSettings:BaseUrl"];
+
+builder.Services.AddHttpClient("JsonPlaceholder", client =>
+{
+    client.BaseAddress = new Uri(baseUrl);
+    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+});
+
+
+
 // Registering custom services in DI Container
 builder.Services.AddScoped<IJsonPlaceholderService, JsonPlaceholderService>();
 
