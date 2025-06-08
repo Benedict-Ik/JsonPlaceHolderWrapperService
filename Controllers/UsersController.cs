@@ -1,4 +1,5 @@
 ﻿using JsonPlaceHolderWrapperService.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +7,7 @@ namespace JsonPlaceHolderWrapperService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class UsersController : ControllerBase
     {
         private readonly IJsonPlaceholderService _service;

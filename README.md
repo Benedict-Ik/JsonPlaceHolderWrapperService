@@ -1,76 +1,35 @@
 # Json Placeholder Wrapper Service 
-In this branch, we deleted the default `WeatherForecastController` class and its model, and proceeded to create `Posts` and `Users` controller classes.
+In this branch, we added the `[Authorize(AuthenticationSchemes = "BasicAuthentication")]` attribute to our `Posts` and `Users` controller class.
 
-## Added new Controllers
-### PostsController
+## Configured SwaggerGen for Authentication
 ```C#
-[Route("api/[controller]")]
-[ApiController]
-public class PostsController : ControllerBase
+builder.Services.AddSwaggerGen(c =>
 {
-    private readonly IJsonPlaceholderService _service;
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "JSON Placeholder Wrapper Service", Version = "v1" });
 
-    public PostsController(IJsonPlaceholderService jsonPlaceholderService)
+    // Add Security Scheme
+    c.AddSecurityDefinition("Basic", new OpenApiSecurityScheme
     {
-        this._service = jsonPlaceholderService;
-    }
+        Type = SecuritySchemeType.Http,
+        Scheme = "basic",
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Description = "Enter your username and password for authentication.",
+    });
 
-    [HttpGet]
-    public async Task<IActionResult> GetAllPosts()
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
-        var posts = await _service.GetPostsAsync();
-        return Ok(posts);
-    }
-
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetPostById(int id)
-    {
-        var post = await _service.GetPostByIdAsync(id);
-        if (post == null)
         {
-            return NotFound();
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Basic"
+                }
+            },
+            new string[] {} // No predefined scopes, allows all authenticated users
         }
-        return Ok(post);
-    }
-
-    [HttpGet("{id}/comments")]
-    public async Task<IActionResult> GetCommentsForPost(int id)
-    {
-        var comments = await _service.GetCommentsByPostIdAsync(id);
-        return Ok(comments);
-    }
-}
-```
-
-### UsersController
-```C#
-[Route("api/[controller]")]
-[ApiController]
-public class UsersController : ControllerBase
-{
-    private readonly IJsonPlaceholderService _service;
-
-    public UsersController(IJsonPlaceholderService jsonPlaceholderService)
-    {
-        this._service = jsonPlaceholderService;
-    }
-
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetUserById(int id)
-    {
-        var user = await _service.GetUserByIdAsync(id);
-        if (user == null)
-        {
-            return NotFound();
-        }
-        return Ok(user);
-    }
-}
-```
-
-
-## Fixed Typo in Program.cs
-Resolved typo by modifying the below line:
-```C#
-var baseUrl = configuration["BaseUrl"];
+    });
+});
 ```
