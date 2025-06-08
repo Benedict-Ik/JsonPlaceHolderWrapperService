@@ -24,7 +24,7 @@ An irregularity was observed upon calling various endpoints. They returned empty
 ]
 ```
 
-Upon troubleshooting, it was discovered that my Models and the API's object names did not match when deserializing. The specific error was termed **Case-Sensitive** Deserialization.  
+Upon troubleshooting, it was discovered that my Models and the API's property names did not match when deserializing. The specific error was termed **Case-Sensitive** Deserialization.  
 
 To resolve the issue, I modified the service class to ensure `PropertyNameCaseInsensitive` is set to `true` when deserializing.  
 
