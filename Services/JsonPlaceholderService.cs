@@ -20,7 +20,10 @@ namespace JsonPlaceHolderWrapperService.Services
             var response = await _httpClient.GetAsync("posts");
             response.EnsureSuccessStatusCode();
             var responseInJson = await response.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<List<PostDto>>(responseInJson)!;
+            var result = JsonSerializer.Deserialize<List<PostDto>>(responseInJson, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
             return result;
         }
 
@@ -30,7 +33,10 @@ namespace JsonPlaceHolderWrapperService.Services
             var response = await _httpClient.GetAsync($"posts/{id}");
             response.EnsureSuccessStatusCode();
             var responseInJson = await response.Content.ReadAsStringAsync()!;
-            var result = JsonSerializer.Deserialize<PostDto?>(responseInJson)!;
+            var result = JsonSerializer.Deserialize<PostDto?>(responseInJson, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
             return result;
         }
 
@@ -39,7 +45,10 @@ namespace JsonPlaceHolderWrapperService.Services
             var response = await _httpClient.GetAsync($"posts/{postId}/comments");
             response.EnsureSuccessStatusCode();
             var responseInJson = await response.Content.ReadAsStringAsync()!;
-            var result = JsonSerializer.Deserialize<List<CommentDto?>>(responseInJson)!;
+            var result = JsonSerializer.Deserialize<List<CommentDto?>>(responseInJson, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            })!;
             return result;
         }
      
@@ -49,7 +58,10 @@ namespace JsonPlaceHolderWrapperService.Services
             var response = await _httpClient.GetAsync($"users/{id}");
             response.EnsureSuccessStatusCode();
             var responseInJson = await response.Content.ReadAsStringAsync()!;
-            var result = JsonSerializer.Deserialize<UserDto>(responseInJson);
+            var result = JsonSerializer.Deserialize<UserDto>(responseInJson, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
             return result;
         }
     }
