@@ -1,63 +1,76 @@
 # Json Placeholder Wrapper Service 
-In this branch, we added the Basic Authentication middleware, `.AddAuthentication`, created a custom `BasicAuthenticationHelper` class, added the auth credentials in our appsettings file using `Secret Manager` , and enable Authentication/Authorization in the app.
+In this branch, we deleted the default `WeatherForecastController` class and its model, and proceeded to create `Posts` and `Users` controller classes.
 
-## Configured Authentication using Basic Authentication
-Added the below line in Program.cs
+## Added new Controllers
+### PostsController
 ```C#
-builder.Services.AddAuthentication("BasicAuthentication")
-    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHelper>("BasicAuthentication", null);
-```
+[Route("api/[controller]")]
+[ApiController]
+public class PostsController : ControllerBase
+{
+    private readonly IJsonPlaceholderService _service;
 
-The above code configures authentication in an ASP.NET Core application using Basic Authentication. It first registers the authentication service with the scheme name `"BasicAuthentication"`, then adds a custom authentication handler (BasicAuthenticationHandler) that 
-inherits from `AuthenticationHandler<AuthenticationSchemeOptions>` and manages user authentication. The helper class is responsible for processing authentication requests, such as validating credentials from an HTTP request header. This setup enables secure access control by requiring clients to provide a username and password when 
-interacting with protected endpoints.
+    public PostsController(IJsonPlaceholderService jsonPlaceholderService)
+    {
+        this._service = jsonPlaceholderService;
+    }
 
-## Created `BasicAuthenticationHelper` class
-We created a `Helpers` folder that housed our BasicAuthenticationHandler class.
+    [HttpGet]
+    public async Task<IActionResult> GetAllPosts()
+    {
+        var posts = await _service.GetPostsAsync();
+        return Ok(posts);
+    }
 
-## Created `BasicAuth` object in app.settings
-Added the below line in appsettings:
-```JSON
-"BasicAuth": {
-    "Username": "Username",
-    "Password":  "Password"
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetPostById(int id)
+    {
+        var post = await _service.GetPostByIdAsync(id);
+        if (post == null)
+        {
+            return NotFound();
+        }
+        return Ok(post);
+    }
+
+    [HttpGet("{id}/comments")]
+    public async Task<IActionResult> GetCommentsForPost(int id)
+    {
+        var comments = await _service.GetCommentsByPostIdAsync(id);
+        return Ok(comments);
+    }
 }
 ```
 
->The above values are placeholders. We will be using the secret manager package to store the real values.
-
-## Using Secret Manager to store Secrets
-For privacy and security, we installed and employed the use of the Secret Manager package, which helps us 
-store secrets (sensitive piece of information) securely and only reference them when we need to.
-
-### Important Commands to Note
-1. **Initialize Secret Manager**
-```Sh
-dotnet user-secrets init
-```
-
-2. **Storing Secrets**
-```Sh
-dotnet user-secrets set "BasicAuth:Username" "Username"
-dotnet user-secrets set "BasicAuth:Password" "Password"
-```
-
-3. **Retrieve all secrets**
-```Sh
-dotnet user-secrets list
-```
-
-In your **Program.cs** file, add the below line to load secrets into configuration:
+### UsersController
 ```C#
-builder.Configuration.AddUserSecrets<Program>();
+[Route("api/[controller]")]
+[ApiController]
+public class UsersController : ControllerBase
+{
+    private readonly IJsonPlaceholderService _service;
+
+    public UsersController(IJsonPlaceholderService jsonPlaceholderService)
+    {
+        this._service = jsonPlaceholderService;
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetUserById(int id)
+    {
+        var user = await _service.GetUserByIdAsync(id);
+        if (user == null)
+        {
+            return NotFound();
+        }
+        return Ok(user);
+    }
+}
 ```
 
-## Enabled Authentication and Authorization Middleware
-We added the below lines of code in Program.cs:
+
+## Fixed Typo in Program.cs
+Resolved typo by modifying the below line:
 ```C#
-app.UseAuthentication();
-app.UseAuthorization();
+var baseUrl = configuration["BaseUrl"];
 ```
-
-The above enables authentication and authorization middleware in the application. `app.UseAuthentication()` ensures that incoming requests are checked for authentication credentials, like tokens or login details. `app.UseAuthorization()` then verifies whether the 
-authenticated user has the necessary permissions to access specific resources. Together, they help enforce security by ensuring only authorized users can interact with protected endpoints.

@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
 //    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 //});
 
-var baseUrl = configuration["ApiSettings:BaseUrl"];
+var baseUrl = configuration["BaseUrl"];
 
 builder.Services.AddHttpClient("JsonPlaceholder", client =>
 {
