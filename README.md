@@ -25,7 +25,9 @@ An irregularity was observed upon calling various endpoints. They returned empty
 ```
 
 Upon troubleshooting, it was discovered that my Models and the API's object names did not match when deserializing. The specific error was termed **Case-Sensitive** Deserialization.  
-To resplve the issue, I modified the service class to ensure `PropertyNameCaseInsensitive` is set to `true` when deserializing.  
+
+To resolve the issue, I modified the service class to ensure `PropertyNameCaseInsensitive` is set to `true` when deserializing.  
+
 Case sample:
 ```C#
 var response = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts");
