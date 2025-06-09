@@ -20,12 +20,20 @@ namespace JsonPlaceHolderWrapperService.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {
-            var user = await _service.GetUserByIdAsync(id);
-            if (user == null)
+            try
             {
-                return NotFound();
+                var user = await _service.GetUserByIdAsync(id);
+                if (user == null)
+                {
+                    return NotFound(new { message = $"User with ID {id} not found." });
+                }
+                return Ok(user);
             }
-            return Ok(user);
+
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
         }
     }
 }

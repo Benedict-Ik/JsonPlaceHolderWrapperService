@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "JSON Placeholder Wrapper Service", Version = "v1" });
 
+
     // Add Security Scheme
     c.AddSecurityDefinition("Basic", new OpenApiSecurityScheme
     {
@@ -42,13 +43,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
-//builder.Services.AddHttpClient("JsonPlaceholder", client =>
-//{
-//    client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
-//    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-//});
-
 var baseUrl = configuration["BaseUrl"];
 
 builder.Services.AddHttpClient("JsonPlaceholder", client =>
@@ -62,7 +56,12 @@ builder.Services.AddHttpClient("JsonPlaceholder", client =>
 builder.Services.AddScoped<IJsonPlaceholderService, JsonPlaceholderService>();
 
 builder.Services.AddAuthentication("BasicAuthentication")
-    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", options =>
+    {
+        options.ForwardChallenge = "BasicAuthenticationFailure";
+        options.ForwardForbid = "BasicAuthenticationFailure";
+    });
+
 
 builder.Configuration.AddUserSecrets<Program>();
 
@@ -77,6 +76,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 

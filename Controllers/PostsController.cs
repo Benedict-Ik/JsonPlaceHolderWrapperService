@@ -1,6 +1,5 @@
 ﻿using JsonPlaceHolderWrapperService.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JsonPlaceHolderWrapperService.Controllers
@@ -20,26 +19,49 @@ namespace JsonPlaceHolderWrapperService.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllPosts()
         {
-            var posts = await _service.GetPostsAsync();
-            return Ok(posts);
+            try
+            {
+                var posts = await _service.GetPostsAsync();
+                return Ok(posts);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPostById(int id)
         {
-            var post = await _service.GetPostByIdAsync(id);
-            if (post == null)
+            try
             {
-                return NotFound();
+                var post = await _service.GetPostByIdAsync(id);
+                if (post == null)
+                {
+                    return NotFound(new { message = $"Post with ID {id} not found." });
+                }
+                return Ok(post);
             }
-            return Ok(post);
+
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
         }
 
         [HttpGet("{id}/comments")]
         public async Task<IActionResult> GetCommentsForPost(int id)
         {
-            var comments = await _service.GetCommentsByPostIdAsync(id);
-            return Ok(comments);
+            try
+            {
+                var comments = await _service.GetCommentsByPostIdAsync(id);
+                return Ok(comments);
+            }
+
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
         }
     }
 }

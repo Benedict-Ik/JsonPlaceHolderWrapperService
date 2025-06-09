@@ -16,53 +16,120 @@ namespace JsonPlaceHolderWrapperService.Services
 
         public async Task<List<PostDto>> GetPostsAsync()
         {
-            // Fetch data via external API
-            var response = await _httpClient.GetAsync("posts");
-            response.EnsureSuccessStatusCode();
-            var responseInJson = await response.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<List<PostDto>>(responseInJson, new JsonSerializerOptions
+            try
             {
-                PropertyNameCaseInsensitive = true
-            })!;
-            return result;
+                // Fetch data via external API
+                var response = await _httpClient.GetAsync("posts");
+                //response.EnsureSuccessStatusCode();
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new HttpRequestException($"External API returned status code {response.StatusCode}");
+                }
+                var responseInJson = await response.Content.ReadAsStringAsync();
+                var result = JsonSerializer.Deserialize<List<PostDto>>(responseInJson, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                })!;
+                return result;
+            }
+            catch (HttpRequestException ex)
+            {
+                throw new Exception("Failed to fetch posts from external API.", ex);
+            }
+
+            catch (JsonException ex)
+            {
+                throw new Exception("Failed to parse posts JSON response.", ex);
+            }
+
         }
 
 
         public async Task<PostDto?> GetPostByIdAsync(int id)
         {
-            var response = await _httpClient.GetAsync($"posts/{id}");
-            response.EnsureSuccessStatusCode();
-            var responseInJson = await response.Content.ReadAsStringAsync()!;
-            var result = JsonSerializer.Deserialize<PostDto?>(responseInJson, new JsonSerializerOptions
+            try
             {
-                PropertyNameCaseInsensitive = true
-            })!;
-            return result;
+                var response = await _httpClient.GetAsync($"posts/{id}");
+                //response.EnsureSuccessStatusCode();
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new HttpRequestException($"External API returned status code {response.StatusCode}");
+                }
+                var responseInJson = await response.Content.ReadAsStringAsync()!;
+                var result = JsonSerializer.Deserialize<PostDto?>(responseInJson, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                })!;
+                return result;
+            }
+            catch (HttpRequestException ex)
+            {
+                throw new Exception("Failed to fetch posts from external API.", ex);
+            }
+
+            catch (JsonException ex)
+            {
+                throw new Exception("Failed to parse posts JSON response.", ex);
+            }
         }
 
         public async Task<List<CommentDto>> GetCommentsByPostIdAsync(int postId)
         {
-            var response = await _httpClient.GetAsync($"posts/{postId}/comments");
-            response.EnsureSuccessStatusCode();
-            var responseInJson = await response.Content.ReadAsStringAsync()!;
-            var result = JsonSerializer.Deserialize<List<CommentDto?>>(responseInJson, new JsonSerializerOptions
+            try
             {
-                PropertyNameCaseInsensitive = true
-            })!;
-            return result;
+                var response = await _httpClient.GetAsync($"posts/{postId}/comments");
+                //response.EnsureSuccessStatusCode();
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new HttpRequestException($"External API returned status code {response.StatusCode}");
+                }
+                var responseInJson = await response.Content.ReadAsStringAsync()!;
+                var result = JsonSerializer.Deserialize<List<CommentDto?>>(responseInJson, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                })!;
+                return result;
+            }
+
+            catch (HttpRequestException ex)
+            {
+                throw new Exception("Failed to fetch posts from external API.", ex);
+            }
+
+            catch (JsonException ex)
+            {
+                throw new Exception("Failed to parse posts JSON response.", ex);
+            }
         }
-     
+
 
         public async Task<UserDto?> GetUserByIdAsync(int id)
         {
-            var response = await _httpClient.GetAsync($"users/{id}");
-            response.EnsureSuccessStatusCode();
-            var responseInJson = await response.Content.ReadAsStringAsync()!;
-            var result = JsonSerializer.Deserialize<UserDto>(responseInJson, new JsonSerializerOptions
+            try
             {
-                PropertyNameCaseInsensitive = true
-            });
-            return result;
+                var response = await _httpClient.GetAsync($"users/{id}");
+                //response.EnsureSuccessStatusCode();
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new HttpRequestException($"External API returned status code {response.StatusCode}");
+                }
+                var responseInJson = await response.Content.ReadAsStringAsync()!;
+                var result = JsonSerializer.Deserialize<UserDto>(responseInJson, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+                return result;
+            }
+
+            catch (HttpRequestException ex)
+            {
+                throw new Exception("Failed to fetch posts from external API.", ex);
+            }
+
+            catch (JsonException ex)
+            {
+                throw new Exception("Failed to parse posts JSON response.", ex);
+            }
         }
     }
 }
