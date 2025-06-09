@@ -17,13 +17,14 @@ namespace JsonPlaceHolderWrapperService.Helpers
 
         public async Task InvokeAsync(HttpContext context)
         {
+            _logger.LogInformation("Handling request: {Method} {Path}", context.Request.Method, context.Request.Path);
             try
             {
                 await _next(context); // Let pipeline continue
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An unhandled exception occurred.");
+                _logger.LogError(ex, "An unhandled exception occurred while processing request: {Method} {Path}", context.Request.Method, context.Request.Path);
 
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
@@ -38,6 +39,7 @@ namespace JsonPlaceHolderWrapperService.Helpers
                 var json = JsonSerializer.Serialize(response);
                 await context.Response.WriteAsync(json);
             }
+            _logger.LogInformation("Finished handling request: {Method} {Path} with status code {StatusCode}", context.Request.Method, context.Request.Path, context.Response.StatusCode);
         }
     }
 }

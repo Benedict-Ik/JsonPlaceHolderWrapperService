@@ -1,11 +1,9 @@
-﻿using JsonPlaceHolderWrapperService.Models;
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
-using System.Text.Json;
 
 namespace JsonPlaceHolderWrapperService.Helpers
 {
@@ -29,10 +27,13 @@ namespace JsonPlaceHolderWrapperService.Helpers
 
         protected override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
+            _logger.LogInformation("Authenticating request for {Path}", Request.Path);
+
             // Check if Authorization header is present
             if (!Request.Headers.ContainsKey("Authorization"))
             {
                 const string message = "Missing Authorization header.";
+                _logger.LogWarning(message);
                 return Task.FromResult(AuthenticateResult.Fail(message));
             }
 
@@ -42,6 +43,7 @@ namespace JsonPlaceHolderWrapperService.Helpers
                 if (!authHeader.Scheme.Equals("Basic", StringComparison.OrdinalIgnoreCase))
                 {
                     const string message = "Invalid authentication scheme.";
+                    _logger.LogWarning(message);
                     return Task.FromResult(AuthenticateResult.Fail(message));
                 }
 
@@ -51,6 +53,7 @@ namespace JsonPlaceHolderWrapperService.Helpers
                 if (credentials.Length != 2)
                 {
                     const string message = "Invalid Authorization header format. Expected username:password.";
+                    _logger.LogWarning(message);
                     return Task.FromResult(AuthenticateResult.Fail(message));
                 }
 
@@ -62,6 +65,8 @@ namespace JsonPlaceHolderWrapperService.Helpers
 
                 if (username == validUsername && password == validPassword)
                 {
+                    _logger.LogInformation("Authentication successful for user: {Username}", username);
+
                     var claims = new[] { new Claim(ClaimTypes.Name, username) };
                     var identity = new ClaimsIdentity(claims, Scheme.Name);
                     var principal = new ClaimsPrincipal(identity);
@@ -72,18 +77,26 @@ namespace JsonPlaceHolderWrapperService.Helpers
                 else
                 {
                     const string message = "Invalid username or password.";
+                    _logger.LogWarning("Authentication failed for user: {Username}", username);
                     return Task.FromResult(AuthenticateResult.Fail(message));
                 }
             }
             catch (FormatException ex)
             {
                 const string message = "Invalid Base64 string in Authorization header.";
+                _logger.LogError(ex, message);
                 return Task.FromResult(AuthenticateResult.Fail(message));
             }
             catch (Exception ex)
             {
                 const string message = "Unexpected error occurred during Basic Authentication.";
+                _logger.LogError(ex, message);
                 return Task.FromResult(AuthenticateResult.Fail(message));
+            }
+            finally
+            {
+
+                _logger.LogInformation("Finished authentication check for {Path}", Request.Path);
             }
         }
     }

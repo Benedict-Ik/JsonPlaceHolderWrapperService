@@ -7,6 +7,13 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
+
+// Enabling Logging
+builder.Logging.ClearProviders(); // Optional: Remove default providers
+builder.Logging.AddConsole();     // Logs to console
+builder.Logging.AddDebug();       // Logs to Debug output
+builder.Logging.AddEventLog();    // Logs to Windows Event Log (Windows only)
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -73,6 +80,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+logger.LogInformation("Application is starting...");
 
 app.UseHttpsRedirection();
 

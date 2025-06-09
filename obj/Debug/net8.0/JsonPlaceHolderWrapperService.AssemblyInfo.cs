@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JsonPlaceHolderWrapperService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+047aa5acfc85f0d3ffbeb46e70dcda1123b685f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3b0c0cebcdb53f71ebd18b1c5c97e434d97e5f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("JsonPlaceHolderWrapperService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JsonPlaceHolderWrapperService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
