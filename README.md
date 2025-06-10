@@ -1,7 +1,7 @@
 # Json Placeholder Wrapper Service 
 
 ## Project Goal
-The goal of this project was to build a wrapper service that interacted with a public API, exposing simplified, secure endpoints to downstream consumers.  
+The goal of this project was to build a wrapper service that interacts with a public API, exposing simplified, secure endpoints to downstream consumers.  
 
 A **wrapper service** is an API that acts as an intermediary, consuming and abstracting another API to provide a simplified, standardized, or modified interface for clients. Think of it as a smaller or grounded API that consumes a much larger API.
 
