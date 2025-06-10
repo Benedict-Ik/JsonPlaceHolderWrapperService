@@ -13,7 +13,7 @@ using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("abe401c5-63c5-48b9-8e76-1afeede61b90")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("JsonPlaceHolderWrapperService")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa9a605c1122bba94e412fc1cfafd9413243aaec")]
 [assembly: System.Reflection.AssemblyProductAttribute("JsonPlaceHolderWrapperService")]

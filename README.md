@@ -1,53 +1,57 @@
 # Json Placeholder Wrapper Service 
 
-## Defining logging in appsettings
-```JSON
-{
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft": "Warning"
-    },
-    "Console": {
-      "LogLevel": {
-        "Default": "Debug",
-        "System": "Error"
-      }
-    },
-    "File": {
-      "Path": "logs/app.log",
-      "LogLevel": {
-        "Default": "Information"
-      }
-    }
-  }
-}
+## Installed the below packages
+Added the below NuGet packages:
+```sh
+dotnet add package Serilog.AspNetCore (8.0.3)
+dotnet add package Serilog.Settings.Configuration (8.0.4)
+dotnet add package Serilog.Sinks.Console (6.0.0) 
+dotnet add package Serilog.Sinks.File (7.0.0)
 ```
 
-## Enabling Logging in Program.cs
+
+## Updated Program.cs to Use Serilog
+Added the below code:
 ```C#
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure logging
-builder.Logging.ClearProviders(); // Optional: Remove default providers
-builder.Logging.AddConsole();     // Logs to console
-builder.Logging.AddDebug();       // Logs to Debug output
-builder.Logging.AddEventLog();    // Logs to Windows Event Log (Windows only)
+// Setup Serilog
+Log.Logger = new LoggerConfiguration() // The variable "Log" comes from the Serilog static class and is accessible when the Serilog directive 'using Serilog' is used
+    .MinimumLevel.Debug() // Or .Information() in production
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+// Tell ASP.NET Core to use Serilog for logging
+builder.Host.UseSerilog();
+
+// Continue with builder.Services...
+
 
 var app = builder.Build();
 
-var logger = app.Services.GetRequiredService<ILogger<Program>>();
-logger.LogInformation("Application is starting...");
+// Log startup information
+Log.Information("Starting up the app...");
 
-app.Run();
+
+try
+{
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Application terminated unexpectedly!");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
 ```
 
-
-## Using ILogger in a controller class
+## Maintained the previous log implementation in controller/service classes
 ```C#
 [Route("api/[controller]")]
 [ApiController]

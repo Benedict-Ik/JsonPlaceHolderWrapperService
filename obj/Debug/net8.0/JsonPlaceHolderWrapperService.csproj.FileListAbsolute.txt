@@ -30,3 +30,13 @@ C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\obj\Debug\net8.0
 C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\obj\Debug\net8.0\JsonPlaceHolderWrapperService.pdb
 C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\obj\Debug\net8.0\JsonPlaceHolderWrapperService.genruntimeconfig.cache
 C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\obj\Debug\net8.0\ref\JsonPlaceHolderWrapperService.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\bin\Debug\net8.0\Serilog.Sinks.File.dll

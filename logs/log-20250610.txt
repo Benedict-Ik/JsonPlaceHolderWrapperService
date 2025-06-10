@@ -1,0 +1,282 @@
+2025-06-10 00:49:10.480 +01:00 [INF] Application is starting...
+2025-06-10 00:49:10.575 +01:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-10 00:49:10.621 +01:00 [DBG] Hosting starting
+2025-06-10 00:49:10.644 +01:00 [INF] User profile is available. Using 'C:\Users\Benedict-Ik\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-10 00:49:10.652 +01:00 [DBG] Reading data from file 'C:\Users\Benedict-Ik\AppData\Local\ASP.NET\DataProtection-Keys\key-3396fa0f-7bfa-4393-9144-791e7adcfcf3.xml'.
+2025-06-10 00:49:10.663 +01:00 [DBG] Found key {3396fa0f-7bfa-4393-9144-791e7adcfcf3}.
+2025-06-10 00:49:10.670 +01:00 [DBG] Considering key {3396fa0f-7bfa-4393-9144-791e7adcfcf3} with expiration date 2025-08-10 13:36:40Z as default key.
+2025-06-10 00:49:10.673 +01:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-06-10 00:49:10.674 +01:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-06-10 00:49:10.675 +01:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-06-10 00:49:10.679 +01:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-06-10 00:49:10.679 +01:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-06-10 00:49:10.681 +01:00 [DBG] Using key {3396fa0f-7bfa-4393-9144-791e7adcfcf3} as the default key.
+2025-06-10 00:49:10.681 +01:00 [DBG] Key ring with default key {3396fa0f-7bfa-4393-9144-791e7adcfcf3} was loaded during application startup.
+2025-06-10 00:49:10.685 +01:00 [DBG] Middleware loaded
+2025-06-10 00:49:10.686 +01:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16543 B).
+2025-06-10 00:49:10.687 +01:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-06-10 00:49:10.752 +01:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-06-10 00:49:10.756 +01:00 [DBG] Loaded hosting startup assembly JsonPlaceHolderWrapperService
+2025-06-10 00:49:10.756 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-06-10 00:49:10.756 +01:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-06-10 00:49:10.756 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-06-10 00:49:10.790 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/swagger/index.html - null null
+2025-06-10 00:49:10.867 +01:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-10 00:49:10.878 +01:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-06-10 00:49:10.878 +01:00 [DBG] Request did not match any endpoints
+2025-06-10 00:49:10.899 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 00:49:10.899 +01:00 [INF] Hosting environment: Development
+2025-06-10 00:49:10.900 +01:00 [INF] Content root path: C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService
+2025-06-10 00:49:10.900 +01:00 [DBG] Hosting started
+2025-06-10 00:49:10.921 +01:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-06-10 00:49:10.923 +01:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-06-10 00:49:10.943 +01:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-06-10 00:49:10.944 +01:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-06-10 00:49:10.946 +01:00 [DBG] Connection ID "18230571313875910691" disconnecting.
+2025-06-10 00:49:10.947 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/swagger/index.html - 200 null text/html;charset=utf-8 161.3557ms
+2025-06-10 00:49:11.032 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-10 00:49:11.033 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/_vs/browserLink - null null
+2025-06-10 00:49:11.036 +01:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-06-10 00:49:11.036 +01:00 [DBG] Connection ID "18374686484771897348" disconnecting.
+2025-06-10 00:49:11.037 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 4.8903ms
+2025-06-10 00:49:11.071 +01:00 [DBG] Connection ID "18374686510541701171" disconnecting.
+2025-06-10 00:49:11.071 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.8004ms
+2025-06-10 00:49:11.456 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/swagger/v1/swagger.json - null null
+2025-06-10 00:49:11.456 +01:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-06-10 00:49:11.456 +01:00 [DBG] Request did not match any endpoints
+2025-06-10 00:49:11.468 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.1637ms
+2025-06-10 00:49:11.470 +01:00 [DBG] Connection ID "18374686484771897350" disconnecting.
+2025-06-10 00:49:16.950 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/api/Posts - null null
+2025-06-10 00:49:16.956 +01:00 [DBG] 1 candidate(s) found for the request path '/api/Posts'
+2025-06-10 00:49:16.958 +01:00 [DBG] Endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService)' with route pattern 'api/Posts' is valid for the request path '/api/Posts'
+2025-06-10 00:49:16.959 +01:00 [DBG] Request matched endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService)'
+2025-06-10 00:49:16.960 +01:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-10 00:49:16.962 +01:00 [INF] Handling request: GET /api/Posts
+2025-06-10 00:49:16.965 +01:00 [INF] Authenticating request for /api/Posts
+2025-06-10 00:49:16.966 +01:00 [WRN] Missing Authorization header.
+2025-06-10 00:49:16.966 +01:00 [INF] BasicAuthentication was not authenticated. Failure message: Missing Authorization header.
+2025-06-10 00:49:16.968 +01:00 [INF] BasicAuthentication was not authenticated. Failure message: Missing Authorization header.
+2025-06-10 00:49:16.968 +01:00 [DBG] Policy authentication schemes BasicAuthentication did not succeed
+2025-06-10 00:49:16.971 +01:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-10 00:49:17.007 +01:00 [ERR] An unhandled exception occurred while processing request: GET /api/Posts
+System.InvalidOperationException: No authentication handler is registered for the scheme 'BasicAuthenticationFailure'. The registered schemes are: BasicAuthentication. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("BasicAuthenticationFailure",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at JsonPlaceHolderWrapperService.Helpers.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\Helpers\ExceptionMiddleware.cs:line 23
+2025-06-10 00:49:17.049 +01:00 [INF] Finished handling request: GET /api/Posts with status code 500
+2025-06-10 00:49:17.050 +01:00 [DBG] Connection ID "18230571313875910693" disconnecting.
+2025-06-10 00:49:17.050 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/api/Posts - 500 null application/json 99.3711ms
+2025-06-10 00:58:11.096 +01:00 [INF] Application is starting...
+2025-06-10 00:58:11.214 +01:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-10 00:58:11.261 +01:00 [DBG] Hosting starting
+2025-06-10 00:58:11.285 +01:00 [INF] User profile is available. Using 'C:\Users\Benedict-Ik\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-10 00:58:11.294 +01:00 [DBG] Reading data from file 'C:\Users\Benedict-Ik\AppData\Local\ASP.NET\DataProtection-Keys\key-3396fa0f-7bfa-4393-9144-791e7adcfcf3.xml'.
+2025-06-10 00:58:11.308 +01:00 [DBG] Found key {3396fa0f-7bfa-4393-9144-791e7adcfcf3}.
+2025-06-10 00:58:11.317 +01:00 [DBG] Considering key {3396fa0f-7bfa-4393-9144-791e7adcfcf3} with expiration date 2025-08-10 13:36:40Z as default key.
+2025-06-10 00:58:11.319 +01:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-06-10 00:58:11.321 +01:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-06-10 00:58:11.322 +01:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-06-10 00:58:11.327 +01:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-06-10 00:58:11.327 +01:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-06-10 00:58:11.329 +01:00 [DBG] Using key {3396fa0f-7bfa-4393-9144-791e7adcfcf3} as the default key.
+2025-06-10 00:58:11.329 +01:00 [DBG] Key ring with default key {3396fa0f-7bfa-4393-9144-791e7adcfcf3} was loaded during application startup.
+2025-06-10 00:58:11.334 +01:00 [DBG] Middleware loaded
+2025-06-10 00:58:11.335 +01:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16543 B).
+2025-06-10 00:58:11.336 +01:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-06-10 00:58:11.408 +01:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-06-10 00:58:11.411 +01:00 [DBG] Loaded hosting startup assembly JsonPlaceHolderWrapperService
+2025-06-10 00:58:11.412 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-06-10 00:58:11.412 +01:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-06-10 00:58:11.412 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-06-10 00:58:11.454 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/swagger/index.html - null null
+2025-06-10 00:58:11.504 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 00:58:11.506 +01:00 [INF] Hosting environment: Development
+2025-06-10 00:58:11.506 +01:00 [INF] Content root path: C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService
+2025-06-10 00:58:11.507 +01:00 [DBG] Hosting started
+2025-06-10 00:58:11.569 +01:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-10 00:58:11.586 +01:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-06-10 00:58:11.586 +01:00 [DBG] Request did not match any endpoints
+2025-06-10 00:58:11.643 +01:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-06-10 00:58:11.644 +01:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-06-10 00:58:11.668 +01:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-06-10 00:58:11.668 +01:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-06-10 00:58:11.670 +01:00 [DBG] Connection ID "18374686501951766586" disconnecting.
+2025-06-10 00:58:11.673 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/swagger/index.html - 200 null text/html;charset=utf-8 223.3465ms
+2025-06-10 00:58:11.756 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/_vs/browserLink - null null
+2025-06-10 00:58:11.756 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-10 00:58:11.760 +01:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-06-10 00:58:11.760 +01:00 [DBG] Connection ID "18374686501951766588" disconnecting.
+2025-06-10 00:58:11.761 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/_framework/aspnetcore-browser-refresh.js - 200 16543 application/javascript; charset=utf-8 4.6523ms
+2025-06-10 00:58:11.796 +01:00 [DBG] Connection ID "18086456104325218330" disconnecting.
+2025-06-10 00:58:11.797 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.8617ms
+2025-06-10 00:58:12.132 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/swagger/v1/swagger.json - null null
+2025-06-10 00:58:12.132 +01:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-06-10 00:58:12.133 +01:00 [DBG] Request did not match any endpoints
+2025-06-10 00:58:12.142 +01:00 [DBG] Connection ID "18230571309580943415" disconnecting.
+2025-06-10 00:58:12.142 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.2725ms
+2025-06-10 00:58:37.578 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/api/Posts - null null
+2025-06-10 00:58:37.584 +01:00 [DBG] 1 candidate(s) found for the request path '/api/Posts'
+2025-06-10 00:58:37.587 +01:00 [DBG] Endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService)' with route pattern 'api/Posts' is valid for the request path '/api/Posts'
+2025-06-10 00:58:37.588 +01:00 [DBG] Request matched endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService)'
+2025-06-10 00:58:37.590 +01:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-10 00:58:37.592 +01:00 [INF] Handling request: GET /api/Posts
+2025-06-10 00:58:37.599 +01:00 [INF] Authenticating request for /api/Posts
+2025-06-10 00:58:37.600 +01:00 [WRN] Missing Authorization header.
+2025-06-10 00:58:37.600 +01:00 [INF] BasicAuthentication was not authenticated. Failure message: Missing Authorization header.
+2025-06-10 00:58:37.603 +01:00 [INF] BasicAuthentication was not authenticated. Failure message: Missing Authorization header.
+2025-06-10 00:58:37.604 +01:00 [DBG] Policy authentication schemes BasicAuthentication did not succeed
+2025-06-10 00:58:37.608 +01:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-10 00:58:37.661 +01:00 [ERR] An unhandled exception occurred while processing request: GET /api/Posts
+System.InvalidOperationException: No authentication handler is registered for the scheme 'BasicAuthenticationFailure'. The registered schemes are: BasicAuthentication. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("BasicAuthenticationFailure",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at JsonPlaceHolderWrapperService.Helpers.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\Helpers\ExceptionMiddleware.cs:line 23
+2025-06-10 00:58:37.721 +01:00 [INF] Finished handling request: GET /api/Posts with status code 500
+2025-06-10 00:58:37.721 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/api/Posts - 500 null application/json 143.964ms
+2025-06-10 00:58:37.726 +01:00 [DBG] Connection ID "18230571305285976090" disconnecting.
+2025-06-10 00:58:52.643 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/api/Posts - null null
+2025-06-10 00:58:52.644 +01:00 [DBG] 1 candidate(s) found for the request path '/api/Posts'
+2025-06-10 00:58:52.644 +01:00 [DBG] Endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService)' with route pattern 'api/Posts' is valid for the request path '/api/Posts'
+2025-06-10 00:58:52.644 +01:00 [DBG] Request matched endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService)'
+2025-06-10 00:58:52.644 +01:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-10 00:58:52.644 +01:00 [INF] Handling request: GET /api/Posts
+2025-06-10 00:58:52.646 +01:00 [INF] Authenticating request for /api/Posts
+2025-06-10 00:58:52.646 +01:00 [INF] Authentication successful for user: Benny4real
+2025-06-10 00:58:52.647 +01:00 [INF] Finished authentication check for /api/Posts
+2025-06-10 00:58:52.647 +01:00 [DBG] AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2025-06-10 00:58:52.648 +01:00 [DBG] AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2025-06-10 00:58:52.649 +01:00 [DBG] Authorization was successful.
+2025-06-10 00:58:52.650 +01:00 [INF] Executing endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService)'
+2025-06-10 00:58:52.669 +01:00 [INF] Route matched with {action = "GetAllPosts", controller = "Posts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPosts() on controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService).
+2025-06-10 00:58:52.670 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-06-10 00:58:52.671 +01:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-06-10 00:58:52.671 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-10 00:58:52.671 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-06-10 00:58:52.671 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-10 00:58:52.674 +01:00 [DBG] Executing controller factory for controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService)
+2025-06-10 00:58:52.678 +01:00 [DBG] Executed controller factory for controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService)
+2025-06-10 00:58:52.680 +01:00 [INF] Trying to fetch all posts.
+2025-06-10 00:58:52.682 +01:00 [INF] Fetching all posts from external API...
+2025-06-10 00:58:52.684 +01:00 [INF] Start processing HTTP request GET https://jsonplaceholder.typicode.com/posts
+2025-06-10 00:58:52.685 +01:00 [INF] Sending HTTP request GET https://jsonplaceholder.typicode.com/posts
+2025-06-10 00:58:53.259 +01:00 [INF] Received HTTP response headers after 567.8439ms - 200
+2025-06-10 00:58:53.260 +01:00 [INF] End processing HTTP request after 577.0509ms - 200
+2025-06-10 00:58:53.271 +01:00 [INF] Successfully fetched and deserialized posts.
+2025-06-10 00:58:53.271 +01:00 [INF] Successfully retrieved 100 posts.
+2025-06-10 00:58:53.279 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-10 00:58:53.281 +01:00 [DBG] No information found on request to perform content negotiation.
+2025-06-10 00:58:53.282 +01:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-10 00:58:53.282 +01:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-10 00:58:53.285 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-06-10 00:58:53.285 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[JsonPlaceHolderWrapperService.Models.PostDto, JsonPlaceHolderWrapperService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-10 00:58:53.297 +01:00 [INF] Executed action JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService) in 620.6962ms
+2025-06-10 00:58:53.298 +01:00 [INF] Executed endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetAllPosts (JsonPlaceHolderWrapperService)'
+2025-06-10 00:58:53.299 +01:00 [INF] Finished handling request: GET /api/Posts with status code 200
+2025-06-10 00:58:53.301 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/api/Posts - 200 null application/json; charset=utf-8 658.4022ms
+2025-06-10 00:58:53.301 +01:00 [DBG] Connection ID "18302628916503773205" disconnecting.
+2025-06-10 00:59:52.178 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/api/Posts/50 - null null
+2025-06-10 00:59:52.183 +01:00 [DBG] 1 candidate(s) found for the request path '/api/Posts/50'
+2025-06-10 00:59:52.183 +01:00 [DBG] Endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService)' with route pattern 'api/Posts/{id}' is valid for the request path '/api/Posts/50'
+2025-06-10 00:59:52.183 +01:00 [DBG] Request matched endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService)'
+2025-06-10 00:59:52.183 +01:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-10 00:59:52.184 +01:00 [INF] Handling request: GET /api/Posts/50
+2025-06-10 00:59:52.184 +01:00 [INF] Authenticating request for /api/Posts/50
+2025-06-10 00:59:52.184 +01:00 [INF] Authentication successful for user: Benny4real
+2025-06-10 00:59:52.184 +01:00 [INF] Finished authentication check for /api/Posts/50
+2025-06-10 00:59:52.184 +01:00 [DBG] AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2025-06-10 00:59:52.188 +01:00 [DBG] AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2025-06-10 00:59:52.189 +01:00 [DBG] Authorization was successful.
+2025-06-10 00:59:52.189 +01:00 [INF] Executing endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService)'
+2025-06-10 00:59:52.198 +01:00 [INF] Route matched with {action = "GetPostById", controller = "Posts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPostById(Int32) on controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService).
+2025-06-10 00:59:52.198 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-06-10 00:59:52.198 +01:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-06-10 00:59:52.198 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-10 00:59:52.198 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-06-10 00:59:52.198 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-10 00:59:52.198 +01:00 [DBG] Executing controller factory for controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService)
+2025-06-10 00:59:52.199 +01:00 [DBG] Executed controller factory for controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService)
+2025-06-10 00:59:52.202 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2025-06-10 00:59:52.203 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2025-06-10 00:59:52.204 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-06-10 00:59:52.204 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-06-10 00:59:52.204 +01:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2025-06-10 00:59:52.206 +01:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2025-06-10 00:59:52.209 +01:00 [INF] Fetching post with ID: 50
+2025-06-10 00:59:52.210 +01:00 [INF] Fetching post with ID 50 from external API...
+2025-06-10 00:59:52.210 +01:00 [INF] Start processing HTTP request GET https://jsonplaceholder.typicode.com/posts/50
+2025-06-10 00:59:52.211 +01:00 [INF] Sending HTTP request GET https://jsonplaceholder.typicode.com/posts/50
+2025-06-10 00:59:52.358 +01:00 [INF] Received HTTP response headers after 147.3701ms - 200
+2025-06-10 00:59:52.358 +01:00 [INF] End processing HTTP request after 147.9018ms - 200
+2025-06-10 00:59:52.360 +01:00 [INF] Successfully fetched and deserialized post with ID 50.
+2025-06-10 00:59:52.361 +01:00 [INF] Successfully retrieved post with ID: 50.
+2025-06-10 00:59:52.361 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-10 00:59:52.361 +01:00 [DBG] No information found on request to perform content negotiation.
+2025-06-10 00:59:52.361 +01:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-10 00:59:52.362 +01:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-10 00:59:52.362 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-06-10 00:59:52.362 +01:00 [INF] Executing OkObjectResult, writing value of type 'JsonPlaceHolderWrapperService.Models.PostDto'.
+2025-06-10 00:59:52.364 +01:00 [INF] Executed action JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService) in 165.4256ms
+2025-06-10 00:59:52.364 +01:00 [INF] Executed endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService)'
+2025-06-10 00:59:52.364 +01:00 [INF] Finished handling request: GET /api/Posts/50 with status code 200
+2025-06-10 00:59:52.365 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/api/Posts/50 - 200 null application/json; charset=utf-8 186.8299ms
+2025-06-10 00:59:52.365 +01:00 [DBG] Connection ID "18230571309580943417" disconnecting.
+2025-06-10 01:00:06.406 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44322/api/Posts/5000 - null null
+2025-06-10 01:00:06.407 +01:00 [DBG] 1 candidate(s) found for the request path '/api/Posts/5000'
+2025-06-10 01:00:06.407 +01:00 [DBG] Endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService)' with route pattern 'api/Posts/{id}' is valid for the request path '/api/Posts/5000'
+2025-06-10 01:00:06.407 +01:00 [DBG] Request matched endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService)'
+2025-06-10 01:00:06.407 +01:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-10 01:00:06.407 +01:00 [INF] Handling request: GET /api/Posts/5000
+2025-06-10 01:00:06.407 +01:00 [INF] Authenticating request for /api/Posts/5000
+2025-06-10 01:00:06.407 +01:00 [INF] Authentication successful for user: Benny4real
+2025-06-10 01:00:06.407 +01:00 [INF] Finished authentication check for /api/Posts/5000
+2025-06-10 01:00:06.407 +01:00 [DBG] AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2025-06-10 01:00:06.407 +01:00 [DBG] AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2025-06-10 01:00:06.408 +01:00 [DBG] Authorization was successful.
+2025-06-10 01:00:06.408 +01:00 [INF] Executing endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService)'
+2025-06-10 01:00:06.408 +01:00 [INF] Route matched with {action = "GetPostById", controller = "Posts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPostById(Int32) on controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService).
+2025-06-10 01:00:06.408 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-06-10 01:00:06.408 +01:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-06-10 01:00:06.408 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-10 01:00:06.408 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-06-10 01:00:06.408 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-10 01:00:06.408 +01:00 [DBG] Executing controller factory for controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService)
+2025-06-10 01:00:06.409 +01:00 [DBG] Executed controller factory for controller JsonPlaceHolderWrapperService.Controllers.PostsController (JsonPlaceHolderWrapperService)
+2025-06-10 01:00:06.409 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2025-06-10 01:00:06.410 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2025-06-10 01:00:06.410 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-06-10 01:00:06.410 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2025-06-10 01:00:06.410 +01:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2025-06-10 01:00:06.410 +01:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2025-06-10 01:00:06.410 +01:00 [INF] Fetching post with ID: 5000
+2025-06-10 01:00:06.410 +01:00 [INF] Fetching post with ID 5000 from external API...
+2025-06-10 01:00:06.410 +01:00 [INF] Start processing HTTP request GET https://jsonplaceholder.typicode.com/posts/5000
+2025-06-10 01:00:06.410 +01:00 [INF] Sending HTTP request GET https://jsonplaceholder.typicode.com/posts/5000
+2025-06-10 01:00:06.832 +01:00 [INF] Received HTTP response headers after 422.2883ms - 404
+2025-06-10 01:00:06.833 +01:00 [INF] End processing HTTP request after 422.6727ms - 404
+2025-06-10 01:00:06.840 +01:00 [WRN] External API returned status code NotFound for post ID 5000.
+2025-06-10 01:00:06.942 +01:00 [ERR] Failed to fetch post with ID 5000 from external API.
+System.Net.Http.HttpRequestException: External API returned status code NotFound
+   at JsonPlaceHolderWrapperService.Services.JsonPlaceholderService.GetPostByIdAsync(Int32 id) in C:\Users\Benedict-Ik\source\repos\JsonPlaceHolderWrapperService\Services\JsonPlaceholderService.cs:line 69
+2025-06-10 01:00:07.030 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-10 01:00:07.030 +01:00 [DBG] No information found on request to perform content negotiation.
+2025-06-10 01:00:07.030 +01:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-10 01:00:07.030 +01:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-10 01:00:07.030 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-06-10 01:00:07.030 +01:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-10 01:00:07.033 +01:00 [INF] Executed action JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService) in 625.0052ms
+2025-06-10 01:00:07.033 +01:00 [INF] Executed endpoint 'JsonPlaceHolderWrapperService.Controllers.PostsController.GetPostById (JsonPlaceHolderWrapperService)'
+2025-06-10 01:00:07.033 +01:00 [INF] Finished handling request: GET /api/Posts/5000 with status code 500
+2025-06-10 01:00:07.034 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44322/api/Posts/5000 - 500 null application/json; charset=utf-8 627.2173ms
+2025-06-10 01:00:07.034 +01:00 [DBG] Connection ID "18302628912208805957" disconnecting.

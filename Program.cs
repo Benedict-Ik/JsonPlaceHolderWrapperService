@@ -3,6 +3,7 @@ using JsonPlaceHolderWrapperService.Interfaces;
 using JsonPlaceHolderWrapperService.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -13,6 +14,16 @@ builder.Logging.ClearProviders(); // Optional: Remove default providers
 builder.Logging.AddConsole();     // Logs to console
 builder.Logging.AddDebug();       // Logs to Debug output
 builder.Logging.AddEventLog();    // Logs to Windows Event Log (Windows only)
+
+// Enabling Serilog
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 // Add services to the container.
 
@@ -92,4 +103,15 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+try
+{
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Application terminated unexpectedly!");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
